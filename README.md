@@ -31,7 +31,7 @@ end
 ### Usage
 
 ```ruby
-lookup = Locality::IP.new('8.8.8.8')
+lookup = Locality::IP.new '198.51.100.55'
 
 # All these attributes return either a String or nil.
 lookup.ip
