@@ -13,6 +13,15 @@ module Locality
       @raw_ip = raw_ip
     end
 
+    def self.check!
+      if Locality.config.maxmind_geoip2_path.blank?
+        fail download_message
+      end
+
+      # Just checking to see if it causes any trouble notiications, but not depending on it
+      new('8.8.8.8').country_name
+    end
+
     def to_hash
       {
         ip: ip.to_s,
@@ -25,7 +34,7 @@ module Locality
     end
 
     def ip
-      @ip ||= ::IPAddr.new raw_ip
+      @ip ||= ::IPAddr.new(raw_ip)
     rescue => exception
       nil
     end
@@ -90,6 +99,25 @@ module Locality
 
     def configure_upstream!
       Geocoder.configure ip_lookup: :geoip2, units: :km, geoip2: { cache: Hash.new, lib: 'hive_geoip2', file: ::Locality.config.maxmind_geoip2_path }
+    end
+
+    def self.download_message
+      <<END
+
+
+      Please download this file:
+
+          http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz
+
+      And put it into one of the following locations
+
+          #{Locality.config.maxmind_geoip2_paths.join("\n          ")}
+
+      You can use the following command to do so:
+
+      curl http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz -o #{Locality.config.maxmind_geoip2_paths.first} && gunzip #{Locality.config.maxmind_geoip2_paths.first}
+
+END
     end
 
   end

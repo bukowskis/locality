@@ -61,7 +61,7 @@ module Locality
       result << Pathname.new('/mnt').join('databases', appendix)
       result << Pathname.new(Dir.pwd).join('db', appendix)
       result << additional
-      result.compact
+      result.compact.uniq
     end
 
   end

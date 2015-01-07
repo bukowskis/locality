@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name        = 'locality'
-  spec.version     = '0.0.1'
+  spec.version     = '0.0.2'
   spec.date        = '2015-01-07'
   spec.summary     = "Wrapping databases provided by maxmind.com and postnummerservice.se"
   spec.description = "See https://github.com/bukowskis/locality"

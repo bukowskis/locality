@@ -62,6 +62,9 @@ end
 ```
 
 ### Usage
+# If you want to make sure on application
+# bootup that everything works, call this method:
+Locality::IP.check!
 
 ```ruby
 lookup = Locality::IP.new '198.51.100.55'
