@@ -3,7 +3,7 @@ module Locality
     class Entry < Array
 
       def zip_code
-        self[0]
+        self[0].to_i
       end
 
       def city_name

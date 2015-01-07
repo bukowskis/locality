@@ -27,7 +27,6 @@ module Locality
     def ip
       @ip ||= ::IPAddr.new raw_ip
     rescue => exception
-      Trouble.notify exception
       nil
     end
 
@@ -69,7 +68,7 @@ module Locality
       Geocoder::Lookup.get(:geoip2).search(ip.to_s).first
 
     rescue IOError => exception
-      ::Trouble.notify exception
+      Trouble.notify exception
       configure_upstream!  # Maybe the database file just moved somewhere else, repair by force-reconfiguring
       nil
     end

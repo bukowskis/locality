@@ -2,7 +2,36 @@
 
 ## Swedish A-Region
 
+See https://sv.wikipedia.org/wiki/A-region
 
+### Installation
+
+```bash
+# Go and buy the rec2LK database from postnummerservice.se
+# Put it in the ./db directory
+```
+
+### Configuration
+
+```ruby
+Locality.configure do |config|
+
+  # By default, locality will look for the rec2LK database in
+  # these locations: `Locality.config.postnummerfilen_paths`
+  # You can add a custom location like so:
+  config.postnummerfilen_path = '/some/custom/rec2LK.csv'
+
+end
+
+```
+### Usage
+
+```ruby
+lookup = Locality::Aregion.new 21  # Gotland
+
+lookup.zip_codes  # => Array of Integers
+# More to come...
+```
 
 ## IP Lookup
 
