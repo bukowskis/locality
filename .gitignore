@@ -1,0 +1,10 @@
+.DS_Store
+/.bundle
+/log/*.log
+.env
+/db/*.sqlite3
+/db/*.mmdb
+.wti
+/tags
+/coverage
+*.mmdb
