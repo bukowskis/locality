@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Locality::IP::Configuration do
+RSpec.describe Locality::Configuration do
 
   let(:config) { described_class.new }
 

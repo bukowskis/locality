@@ -4,19 +4,13 @@ require 'operation'
 require 'trouble'
 require 'geocoder'
 
-require 'locality/ip/configuration'
 require 'locality/configurable'
 
 module Locality
   class IP
-    extend Configurable
 
     def initialize(raw_ip)
       @raw_ip = raw_ip
-    end
-
-    def self.configuration_instance
-      Configuration.new
     end
 
     def to_hash
@@ -81,7 +75,7 @@ module Locality
     end
 
     def custom_lookup!
-      self.class.config.custom_locations.each do |key, value|
+      ::Locality.config.custom_ip_locations.each do |key, value|
         next unless key.include? ip
         input = Hashie::Mash.new value
         # Quacking like Geocoder::Result::GeoIP2
@@ -96,7 +90,7 @@ module Locality
     end
 
     def configure_upstream!
-      Geocoder.configure ip_lookup: :geoip2, units: :km, geoip2: { cache: Hash.new, lib: 'hive_geoip2', file: self.class.config.maxmind_geoip2_path }
+      Geocoder.configure ip_lookup: :geoip2, units: :km, geoip2: { cache: Hash.new, lib: 'hive_geoip2', file: ::Locality.config.maxmind_geoip2_path }
     end
 
   end

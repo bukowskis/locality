@@ -48,7 +48,7 @@ RSpec.describe Locality::IP do
       let(:address) { '198.51.100.99' }
 
       before do
-        Locality::IP.config.add_custom_location '198.51.100.99/24', country_name: 'Land of Documentation'
+        Locality.config.add_custom_ip_location '198.51.100.99/24', country_name: 'Land of Documentation'
       end
 
       describe '#human_readable_location' do
@@ -62,7 +62,7 @@ RSpec.describe Locality::IP do
       let(:address) { '203.0.113.42' }
 
       before do
-        Locality::IP.config.add_custom_location '203.0.113.42', city_name: 'X-Men Headquaters'
+        Locality.config.add_custom_ip_location '203.0.113.42', city_name: 'X-Men Headquaters'
       end
 
       describe '#human_readable_location' do

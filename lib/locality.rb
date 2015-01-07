@@ -1,5 +1,8 @@
+require 'locality/aregion'
+require 'locality/configurable'
 require 'locality/ip'
-require 'locality/zip'
+require 'locality/aregion'
 
 module Locality
+  extend Configurable
 end

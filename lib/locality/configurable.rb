@@ -1,10 +1,12 @@
+require 'locality/configuration'
+
 module Locality
   module Configurable
 
     # Public: Returns the the configuration instance.
     #
     def config
-      @config ||= configuration_instance
+      @config ||= Configuration.new
     end
 
     # Public: Yields the configuration instance.
@@ -17,10 +19,6 @@ module Locality
     #
     def reset!
       @config = nil
-    end
-
-    def configuration_instance
-      fail NotImplementedError
     end
 
   end
