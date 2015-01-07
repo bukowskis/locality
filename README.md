@@ -62,11 +62,13 @@ end
 ```
 
 ### Usage
+
+```ruby
 # If you want to make sure on application
 # bootup that everything works, call this method:
 Locality::IP.check!
 
-```ruby
+# Lookup an IP
 lookup = Locality::IP.new '198.51.100.55'
 
 # All these attributes return either a String or nil.
