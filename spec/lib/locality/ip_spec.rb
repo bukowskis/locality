@@ -15,20 +15,20 @@ RSpec.describe Locality::IP do
     end
   end
 
-  context 'Google DNS server' do
-    let(:address)  { '8.8.8.8' }
+  context 'a Swedish server' do
+    let(:address)  { '109.105.111.14' }
 
     describe '#human_readable_location' do
       it 'knows the country' do
-        expect(locality.human_readable_location).to eq 'United States'
+        expect(locality.human_readable_location).to eq 'Sweden'
       end
     end
 
     describe '#to_hash' do
       it 'holds all relevant information' do
         expect(locality.to_hash.keys).to eq %i(ip city_name province_name state_name country_name human_readable_location)
-        expect(locality.to_hash[:country_name]).to eq 'United States'
-        expect(locality.to_hash[:ip]).to eq '8.8.8.8'
+        expect(locality.to_hash[:country_name]).to eq 'Sweden'
+        expect(locality.to_hash[:ip]).to eq '109.105.111.14'
       end
     end
   end
