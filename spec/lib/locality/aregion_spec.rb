@@ -4,6 +4,12 @@ RSpec.describe Locality::Aregion do
 
   let(:aregion) { described_class.new region }
 
+  describe '.codes' do
+    it 'has all codes' do
+      expect(described_class.codes.keys).to eq (1..70).to_a
+    end
+  end
+
   context 'Region 1' do
     let(:region)  { 1 }
 
