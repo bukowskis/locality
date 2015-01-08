@@ -15,6 +15,16 @@ RSpec.describe Locality::IP do
     end
   end
 
+  context 'IPAddr instance' do
+    let(:address) { IPAddr.new('109.105.111.14') }
+
+    describe '#human_readable_location' do
+      it 'knows the country' do
+        expect(locality.human_readable_location).to eq 'Sweden'
+      end
+    end
+  end
+
   context 'a Swedish server' do
     let(:address)  { '109.105.111.14' }
 

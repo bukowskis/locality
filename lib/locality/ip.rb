@@ -34,7 +34,7 @@ module Locality
     end
 
     def ip
-      @ip ||= ::IPAddr.new(raw_ip)
+      @ip ||= ::IPAddr.new(raw_ip.to_s)
     rescue => exception
       nil
     end
