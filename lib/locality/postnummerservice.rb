@@ -22,14 +22,19 @@ module Locality
     def self.load!
       @aregions = {}
 
-      ::CSV.foreach(::Locality.config.postnummerfilen_path, encoding: encoding) do |row|
-        next if row.blank?
-        entry = Entry.new(row)
+      entries do |entry|
         @aregions[entry.aregion] ||= []
         @aregions[entry.aregion] << entry
       end
 
       @loaded = true
+    end
+
+    def self.entries(&block)
+      ::CSV.foreach(::Locality.config.postnummerfilen_path, encoding: encoding) do |row|
+        next if row.blank?
+        yield Entry.new(row)
+      end
     end
 
     def self.encoding

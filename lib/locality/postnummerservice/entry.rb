@@ -1,3 +1,5 @@
+require 'active_support/core_ext/string'
+
 module Locality
   module Postnummerservice
     class Entry < Array
@@ -11,11 +13,11 @@ module Locality
       end
 
       def state_code
-        self[2]
+        self[2].to_i
       end
 
       def state_name
-        self[3]
+        self[3].humanize
       end
 
       def province_name

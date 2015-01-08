@@ -1,21 +1,23 @@
 require 'locality/postnummerservice'
+require 'locality/postnummerservice/collection'
 
 module Locality
   # See https://sv.wikipedia.org/wiki/A-region
   class Aregion
+    include Postnummerservice::Collection
 
-    def initialize(raw_code)
-      @raw_code = raw_code
+    def code
+      raw_code.to_i
     end
 
-    def zip_codes
-      @zip_codes ||= backend.aregions[1].map(&:zip_code)
+    def state_name
+      state_names.first
     end
 
     private
 
     def backend
-      Locality::Postnummerservice
+      Locality::Postnummerservice.aregions
     end
 
   end
