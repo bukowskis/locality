@@ -52,7 +52,7 @@ curl http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz -o
 Locality.configure do |config|
 
   # By default, locality will look for the maxmind database in
-  # these locations: `Locality.config.maxmind_geoip2_path`
+  # these locations: `Locality.config.maxmind_geoip2_paths`
   # You can add a custom location like so:
   config.maxmind_geoip2_path = '/some/custom/maxmind_geolite2.mmdb'
 

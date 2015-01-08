@@ -9,7 +9,7 @@ module Locality
       end
 
       def city_name
-        self[1]
+        self[1].to_s.mb_chars.downcase.titleize.to_s
       end
 
       def state_code
@@ -17,11 +17,11 @@ module Locality
       end
 
       def state_name
-        self[3].humanize
+        self[3].to_s.mb_chars.downcase.titleize.to_s
       end
 
       def province_name
-        self[4]
+        self[4].to_s.mb_chars.downcase.titleize.to_s
       end
 
       def province_code

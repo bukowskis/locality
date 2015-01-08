@@ -18,6 +18,12 @@ RSpec.describe Locality::Aregion do
         expect(aregion.state_name).to eq 'Stockholm'
       end
     end
+
+    describe '#city_names' do
+      it 'knows the city names' do
+        expect(aregion.city_names).to eq %w(Hårsfjärden Nacka Nacka\ Strand Ornö Saltsjö-Duvnäs Stockholm Utö)
+      end
+    end
   end
 
   context 'Region 21' do
@@ -34,7 +40,12 @@ RSpec.describe Locality::Aregion do
         expect(aregion.state_name).to eq 'Gotland'
       end
     end
-  end
 
+    describe '#city_names' do
+      it 'knows the city names' do
+        expect(aregion.city_names).to eq %w(Visby)
+      end
+    end
+  end
 
 end
