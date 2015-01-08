@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.authors     = %w{ bukowskis }
   spec.homepage    = 'https://github.com/bukowskis/locality'
 
-  spec.files       = Dir['{bin,lib,man}/**/*', 'README*', 'LICENSE*']
+  spec.files       = Dir['{bin,lib,man}/**/*', 'README*', 'LICENSE*'] & `git ls-files -z`.split("\0")
 
   spec.add_dependency 'activesupport'
   spec.add_dependency 'geocoder', '1.2.6'
