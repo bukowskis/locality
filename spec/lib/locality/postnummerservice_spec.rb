@@ -14,4 +14,10 @@ RSpec.describe Locality::Postnummerservice do
     end
   end
 
+  describe '.provinces' do
+    it 'knows all provinces' do
+      expect(service.provinces.keys).to eq %w(0136 0182 0180 0980)
+    end
+  end
+
 end

@@ -20,15 +20,15 @@ module Locality
         self[3].to_s.mb_chars.downcase.titleize.to_s
       end
 
-      def province_name
-        self[4].to_s.mb_chars.downcase.titleize.to_s
-      end
-
       def province_code
-        self[5]
+        self[4]
       end
 
-      def aregion
+      def province_name
+        self[5].to_s.mb_chars.downcase.titleize.to_s
+      end
+
+      def aregion_code
         self[6].to_i
       end
 

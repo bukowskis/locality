@@ -86,9 +86,13 @@ module Locality
         raw_code.to_i
       end
 
+      def name
+        self.class.codes[code]
+      end
+
       private
 
-      def backend
+      def self.backend
         Postnummerservice.aregions
       end
 

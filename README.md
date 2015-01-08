@@ -25,10 +25,31 @@ end
 ### Usage
 
 ```ruby
+# A-Regions
 # See https://sv.wikipedia.org/wiki/A-region
+available_codes = Locality::Postnummerservice::Aregion.codes
 lookup = Locality::Postnummerservice::Aregion.new 21  # Gotland
 
-lookup.zip_codes  # => Array of Integers
+# States
+# See https://sv.wikipedia.org/wiki/Sveriges_l%C3%A4n
+available_codes = Locality::Postnummerservice::State.codes
+lookup = Locality::Postnummerservice::State.new 7  # Kronoberg
+
+# Provinces
+# See https://sv.wikipedia.org/wiki/Sveriges_l%C3%A4n
+available_codes = Locality::Postnummerservice::Province.codes
+lookup = Locality::Postnummerservice::Province.new '0182'  # Nacka
+
+# On all of the above lookups you have the following attributes
+lookup.code
+lookup.name
+lookup.zip_codes
+lookup.city_names
+lookup.state_codes
+lookup.state_names
+lookup.province_code
+lookup.province_names
+lookup.aregion_codes
 
 # More to come...
 ```

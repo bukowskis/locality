@@ -1,6 +1,7 @@
 require 'csv'
 require 'locality/postnummerservice/entry'
 require 'locality/postnummerservice/aregion'
+require 'locality/postnummerservice/province'
 require 'locality/postnummerservice/state'
 
 module Locality
@@ -9,6 +10,16 @@ module Locality
     def self.aregions
       load
       @aregions
+    end
+
+    def self.states
+      load
+      @states
+    end
+
+    def self.provinces
+      load
+      @provinces
     end
 
     private
@@ -23,10 +34,16 @@ module Locality
 
     def self.load!
       @aregions = {}
+      @states = {}
+      @provinces = {}
 
       entries do |entry|
-        @aregions[entry.aregion] ||= []
-        @aregions[entry.aregion] << entry
+        @aregions[entry.aregion_code] ||= []
+        @aregions[entry.aregion_code] << entry
+        @states[entry.state_code] ||= []
+        @states[entry.state_code] << entry
+        @provinces[entry.province_code] ||= []
+        @provinces[entry.province_code] << entry
       end
 
       @loaded = true

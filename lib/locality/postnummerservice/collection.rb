@@ -5,6 +5,12 @@ module Locality
     module Collection
       extend ActiveSupport::Concern
 
+      module ClassMethods
+        def backend
+          fail NotImplementedError
+        end
+      end
+
       def initialize(raw_code)
         @raw_code = raw_code
       end
@@ -38,8 +44,8 @@ module Locality
         @province_codes ||= entities.map(&:province_code).uniq.sort
       end
 
-      def aregions
-        @aregions ||= entities.map(&:aregion).uniq.sort
+      def aregion_codes
+        @aregions ||= entities.map(&:aregion_code).uniq.sort
       end
 
       private
@@ -51,7 +57,7 @@ module Locality
       end
 
       def backend
-        fail NotImplementedError
+        self.class.backend
       end
 
     end

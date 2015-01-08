@@ -19,9 +19,33 @@ RSpec.describe Locality::Postnummerservice::Aregion do
       end
     end
 
+    describe '#name' do
+      it 'knows its own name' do
+        expect(aregion.name).to eq 'Stockholm/Södertälje'
+      end
+    end
+
     describe '#state_names' do
       it 'knows the included states' do
         expect(aregion.state_names).to eq %w(Stockholm)
+      end
+    end
+
+    describe '#state_codes' do
+      it 'knows the included state codes' do
+        expect(aregion.state_codes).to eq [1]
+      end
+    end
+
+    describe '#province_names' do
+      it 'knows the province names' do
+        expect(aregion.province_names).to eq %w(Haninge Nacka Stockholm)
+      end
+    end
+
+    describe '#province_codes' do
+      it 'knows the province codes' do
+        expect(aregion.province_codes).to eq %w(0136 0180 0182)
       end
     end
 
@@ -41,9 +65,21 @@ RSpec.describe Locality::Postnummerservice::Aregion do
       end
     end
 
+    describe '#name' do
+      it 'knows its own name' do
+        expect(aregion.name).to eq 'Visby'
+      end
+    end
+
     describe '#state_name' do
       it 'knows the included states' do
         expect(aregion.state_names).to eq %w(Gotland)
+      end
+    end
+
+    describe '#state_codes' do
+      it 'knows the included state codes' do
+        expect(aregion.state_codes).to eq [9]
       end
     end
 

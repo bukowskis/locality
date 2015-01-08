@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
   spec.files       = Dir['{bin,lib,man}/**/*', 'README*', 'LICENSE*'] & `git ls-files -z`.split("\0")
 
   spec.add_dependency 'activesupport'
-  spec.add_dependency 'countries', '~> 0.9.3'
   spec.add_dependency 'geocoder', '1.2.6'
   spec.add_dependency 'hashie'
   spec.add_dependency 'hive_geoip2', '0.1.2'
