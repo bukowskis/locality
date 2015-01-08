@@ -58,7 +58,7 @@ module Locality
     def paths(appendix = nil, additional = nil)
       result = []
       result << Rails.root.join('db', appendix) if defined?(Rails)
-      result << Pathname.new('/mnt').join('databases', appendix)
+      result << Pathname.new('/mnt').join('data', 'maxmind', appendix)
       result << Pathname.new(Dir.pwd).join('db', appendix)
       result << additional
       result.compact.uniq
