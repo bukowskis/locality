@@ -1,8 +1,6 @@
 # Locality
 
-## Swedish A-Region
-
-See https://sv.wikipedia.org/wiki/A-region
+## Postnummerservice
 
 ### Installation
 
@@ -27,9 +25,11 @@ end
 ### Usage
 
 ```ruby
-lookup = Locality::Aregion.new 21  # Gotland
+# See https://sv.wikipedia.org/wiki/A-region
+lookup = Locality::Postnummerservice::Aregion.new 21  # Gotland
 
 lookup.zip_codes  # => Array of Integers
+
 # More to come...
 ```
 

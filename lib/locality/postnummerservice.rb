@@ -1,5 +1,7 @@
 require 'csv'
 require 'locality/postnummerservice/entry'
+require 'locality/postnummerservice/aregion'
+require 'locality/postnummerservice/state'
 
 module Locality
   module Postnummerservice

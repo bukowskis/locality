@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Locality::Aregion do
+RSpec.describe Locality::Postnummerservice::Aregion do
 
   let(:aregion) { described_class.new region }
 
@@ -19,9 +19,9 @@ RSpec.describe Locality::Aregion do
       end
     end
 
-    describe '#state_name' do
-      it 'knows the state name' do
-        expect(aregion.state_name).to eq 'Stockholm'
+    describe '#state_names' do
+      it 'knows the included states' do
+        expect(aregion.state_names).to eq %w(Stockholm)
       end
     end
 
@@ -42,8 +42,8 @@ RSpec.describe Locality::Aregion do
     end
 
     describe '#state_name' do
-      it 'knows the state name' do
-        expect(aregion.state_name).to eq 'Gotland'
+      it 'knows the included states' do
+        expect(aregion.state_names).to eq %w(Gotland)
       end
     end
 

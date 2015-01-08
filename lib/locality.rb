@@ -1,7 +1,6 @@
-require 'locality/aregion'
 require 'locality/configurable'
 require 'locality/ip'
-require 'locality/aregion'
+require 'locality/postnummerservice'
 
 module Locality
   extend Configurable
