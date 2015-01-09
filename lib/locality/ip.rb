@@ -46,21 +46,25 @@ module Locality
     def city_name
       return unless lookup
       lookup.city.presence
+    rescue => exception
     end
 
     def province_name
       return unless lookup
       lookup.province.presence
+    rescue => exception
     end
 
     def state_name
       return unless lookup
       lookup.state.presence
+    rescue => exception
     end
 
     def country_name
       return unless lookup
       lookup.country.presence
+    rescue => exception
     end
 
     private

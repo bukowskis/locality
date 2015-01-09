@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    locality (0.1.0)
+    locality (0.1.1)
       activesupport
       geocoder (= 1.2.6)
       hashie
@@ -47,7 +47,7 @@ GEM
     hitimes (1.2.2)
     hive_geoip2 (0.1.2)
     i18n (0.7.0)
-    json (1.8.1)
+    json (1.8.2)
     listen (2.8.5)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)

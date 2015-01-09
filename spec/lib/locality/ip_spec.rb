@@ -5,6 +5,16 @@ RSpec.describe Locality::IP do
   let(:locality) { described_class.new address }
   let(:service)  { described_class.service }
 
+  context 'nil IP' do
+    let(:address) { nil }
+
+    describe '#ip' do
+      it 'does not break' do
+        expect(locality.ip).to be_nil
+      end
+    end
+  end
+
   context 'blank IP' do
     let(:address) { '   ' }
 
@@ -45,6 +55,16 @@ RSpec.describe Locality::IP do
 
   context 'loopback' do
     let(:address)  { '127.0.0.1' }
+
+    describe '#human_readable_location' do
+      it 'is nil' do
+        expect(locality.human_readable_location).to be_nil
+      end
+    end
+  end
+
+  context 'unknown country' do
+    let(:address)  { '194.161.219.25' }
 
     describe '#human_readable_location' do
       it 'is nil' do
