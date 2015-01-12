@@ -11,6 +11,10 @@ RSpec.describe Locality::Configuration do
       expect(paths).to include "#{Dir.pwd}/db/GeoLite2-City.mmdb"
     end
 
+    it 'includes the relative db path below this directory' do
+      expect(paths).to include File.expand_path("#{Dir.pwd}/../databases/GeoLite2-City.mmdb")
+    end
+
     it 'includes the /mnt/databases path' do
       expect(paths).to include '/mnt/data/maxmind/GeoLite2-City.mmdb'
     end
