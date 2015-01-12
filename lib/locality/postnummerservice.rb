@@ -32,11 +32,16 @@ module Locality
       !!@loaded
     end
 
-    def self.load!
+    # Useful for testing
+    def self.reset!
+      @loaded = false
       @aregions = {}
       @states = {}
       @provinces = {}
+    end
 
+    def self.load!
+      reset!
       entries do |entry|
         @aregions[entry.aregion_code] ||= []
         @aregions[entry.aregion_code] << entry
@@ -50,14 +55,24 @@ module Locality
     end
 
     def self.entries(&block)
-      ::CSV.foreach(::Locality.config.postnummerfilen_path, encoding: encoding) do |row|
+      return [] unless path
+
+      ::CSV.foreach(path, encoding: encoding) do |row|
         next if row.blank?
         yield Entry.new(row)
       end
+
+    rescue => exception
+      Trouble.notify exception
+      []
     end
 
     def self.encoding
       'ISO-8859-1:UTF-8'  # from:to
+    end
+
+    def self.path
+      ::Locality.config.postnummerfilen_path
     end
 
   end

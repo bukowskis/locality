@@ -4,6 +4,16 @@ RSpec.describe Locality::Postnummerservice do
 
   let(:service) { described_class }
 
+  context 'database missing' do
+    before do
+      allow(::Locality.config).to receive(:postnummerfilen_path)
+    end
+
+    it 'does not break' do
+      expect(service.states).to be_empty
+    end
+  end
+
   describe '.aregions' do
     it 'knows all aregions' do
       expect(service.aregions.keys).to eq [1,21]
