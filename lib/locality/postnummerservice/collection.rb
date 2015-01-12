@@ -53,7 +53,7 @@ module Locality
       attr_reader :raw_code
 
       def entities
-        backend[code]
+        backend[code] || []
       end
 
       def backend

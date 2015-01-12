@@ -10,6 +10,16 @@ RSpec.describe Locality::Postnummerservice::State do
     end
   end
 
+  context 'unknown code' do
+    let(:code) { '999999999' }
+
+    describe '#zip_codes' do
+      it 'does not break' do
+        expect(state.zip_codes).to be_empty
+      end
+    end
+  end
+
   context 'Stockholms län' do
     let(:code) { 1 }
 
