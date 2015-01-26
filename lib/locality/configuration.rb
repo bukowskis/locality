@@ -59,6 +59,7 @@ module Locality
       result = []
       result << Rails.root.join('db', appendix) if defined?(Rails)
       result << Pathname.new('/mnt').join('data', 'maxmind', appendix)
+      result << Pathname.new('/mnt').join('data', 'postnummerservice', appendix)
       result << Pathname.new(Dir.pwd).join('db', appendix)
       result << Pathname.new(Dir.pwd).join('../databases', appendix)
       result << additional
