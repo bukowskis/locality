@@ -57,7 +57,7 @@ module Locality
     def self.entries(&block)
       return [] unless path
 
-      ::CSV.foreach(path, encoding: encoding) do |row|
+      ::CSV.foreach(path, encoding: encoding, col_sep: ';') do |row|
         next if row.blank?
         yield Entry.new(row)
       end
