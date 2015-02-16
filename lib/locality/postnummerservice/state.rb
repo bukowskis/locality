@@ -8,7 +8,8 @@ module Locality
 
       # See http://www.scb.se/Pages/List____257281.aspx
       def self.codes
-        Hash[backend.map { |code, entries| [code, entries.first.state_name] }]
+        array = backend.map { |code, entries| [code, entries.first.state_name] }.sort
+        Hash[*array.flatten]
       end
 
       def code

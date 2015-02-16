@@ -6,7 +6,7 @@ RSpec.describe Locality::Postnummerservice::State do
 
   describe '.codes' do
     it 'has all codes' do
-      expect(described_class.codes).to eq 1 => 'Stockholm', 9 => 'Gotland'
+      expect(described_class.codes).to eq 1 => 'Stockholm', 9 => 'Gotland', 24 => 'Västerbotten'
     end
   end
 

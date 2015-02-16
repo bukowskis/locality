@@ -6,7 +6,7 @@ RSpec.describe Locality::Postnummerservice::Province do
 
   describe '.codes' do
     it 'has all codes' do
-      expect(described_class.codes).to eq '0136' => 'Haninge', '0182' => 'Nacka', '0180' => 'Stockholm', '0980' => 'Gotland'
+      expect(described_class.codes).to eq '0136' => 'Haninge', '0182' => 'Nacka', '0180' => 'Stockholm', '0980' => 'Gotland', '2482' => 'Skellefteå'
     end
   end
 

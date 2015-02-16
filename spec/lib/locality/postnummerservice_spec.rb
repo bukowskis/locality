@@ -16,7 +16,7 @@ RSpec.describe Locality::Postnummerservice do
 
   describe '.aregions' do
     it 'knows all aregions' do
-      expect(service.aregions.keys).to eq [1,21]
+      expect(service.aregions.keys).to eq [65,1,21]
     end
 
     it 'knows all zip codes of one aregion, including duplicates' do
@@ -26,7 +26,7 @@ RSpec.describe Locality::Postnummerservice do
 
   describe '.provinces' do
     it 'knows all provinces' do
-      expect(service.provinces.keys).to eq %w(0136 0182 0180 0980)
+      expect(service.provinces.keys).to eq %w(2482 0136 0182 0180 0980)
     end
   end
 
