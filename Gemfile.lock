@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    locality (1.0.3)
+    locality (1.0.4)
       activesupport
       geocoder (= 1.2.6)
       hashie
