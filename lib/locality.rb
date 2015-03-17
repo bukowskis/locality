@@ -1,3 +1,4 @@
+require 'active_support'
 require 'locality/configurable'
 require 'locality/ip'
 require 'locality/postnummerservice'
