@@ -43,6 +43,24 @@ module Locality
       city_name || province_name || state_name || country_name
     end
 
+    def coordinates
+      return unless lookup
+      lookup.coordinates.presence
+    rescue => exception
+    end
+
+    def latitude
+      return unless lookup
+      lookup.latitude.presence
+    rescue => exception
+    end
+
+    def longitude
+      return unless lookup
+      lookup.longitude.presence
+    rescue => exception
+    end
+
     def city_name
       return unless lookup
       lookup.city.presence
