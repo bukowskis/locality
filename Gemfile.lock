@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    locality (1.0.4)
+    locality (1.0.5)
       activesupport
       geocoder (= 1.2.6)
       hashie
@@ -43,7 +43,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    hashie (3.3.2)
+    hashie (3.4.0)
     hitimes (1.2.2)
     hive_geoip2 (0.1.2)
     i18n (0.7.0)
@@ -54,17 +54,17 @@ GEM
       rb-inotify (>= 0.9)
     lumberjack (1.0.9)
     method_source (0.8.2)
-    minitest (5.5.0)
+    minitest (5.5.1)
     nenv (0.1.1)
     notiffany (0.0.2)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    operation (0.0.3)
-      hashie
+    operation (1.4.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    rake (10.4.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -100,6 +100,7 @@ PLATFORMS
 DEPENDENCIES
   guard-rspec
   locality!
+  rake
   rb-fsevent
   rspec
   webmock

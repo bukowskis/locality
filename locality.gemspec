@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name        = 'locality'
-  spec.version     = '1.0.4'
+  spec.version     = '1.0.5'
   spec.date        = '2015-03-17'
   spec.summary     = "Wrapping databases provided by maxmind.com and postnummerservice.se"
   spec.description = "See https://github.com/bukowskis/locality"
@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'operation'
   spec.add_dependency 'trouble'
 
+  spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'guard-rspec'
   spec.add_development_dependency 'rb-fsevent'
