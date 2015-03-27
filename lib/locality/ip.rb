@@ -3,6 +3,7 @@ require 'ipaddr'
 require 'operation'
 require 'trouble'
 require 'geocoder'
+require 'hashie/mash'
 
 require 'locality/configurable'
 
