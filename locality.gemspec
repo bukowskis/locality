@@ -1,7 +1,7 @@
 Gem::Specification.new do |spec|
   spec.name        = 'locality'
-  spec.version     = '1.0.5'
-  spec.date        = '2015-03-17'
+  spec.version     = '1.0.6'
+  spec.date        = '2015-12-18'
   spec.summary     = "Wrapping databases provided by maxmind.com and postnummerservice.se"
   spec.description = "See https://github.com/bukowskis/locality"
   spec.authors     = %w{ bukowskis }
@@ -10,9 +10,9 @@ Gem::Specification.new do |spec|
   spec.files       = Dir['{bin,lib,man}/**/*', 'README*', 'LICENSE*'] & `git ls-files -z`.split("\0")
 
   spec.add_dependency 'activesupport'
-  spec.add_dependency 'geocoder', '1.2.6'
+  spec.add_dependency 'geocoder', '1.2.13'
   spec.add_dependency 'hashie'
-  spec.add_dependency 'hive_geoip2', '0.1.2'
+  spec.add_dependency 'maxminddb', '0.1.8'
   spec.add_dependency 'i18n'
   spec.add_dependency 'operation'
   spec.add_dependency 'trouble'

@@ -121,7 +121,7 @@ module Locality
     end
 
     def configure_upstream!
-      Geocoder.configure ip_lookup: :geoip2, units: :km, geoip2: { lib: 'hive_geoip2', file: ::Locality.config.maxmind_geoip2_path }
+      Geocoder.configure ip_lookup: :geoip2, units: :km, geoip2: { file: ::Locality.config.maxmind_geoip2_path }
     end
 
     def self.download_message
