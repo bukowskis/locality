@@ -40,6 +40,10 @@ lookup = Locality::Postnummerservice::State.new 7  # Kronoberg
 available_codes = Locality::Postnummerservice::Province.codes
 lookup = Locality::Postnummerservice::Province.new '0182'  # Nacka
 
+# Zip Codes
+# See https://sv.wikipedia.org/wiki/Postnummer_i_Sverige
+lookup = Locality::Postnummerservice::ZipCode.new '11417'  # Stockholm
+
 # On all of the above lookups you have the following attributes
 lookup.code
 lookup.name
