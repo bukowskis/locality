@@ -3,6 +3,7 @@ require 'locality/postnummerservice/entry'
 require 'locality/postnummerservice/aregion'
 require 'locality/postnummerservice/province'
 require 'locality/postnummerservice/state'
+require 'locality/postnummerservice/zip_code'
 
 module Locality
   module Postnummerservice
@@ -22,6 +23,11 @@ module Locality
       @provinces
     end
 
+    def self.zip_codes
+      load
+      @zip_codes
+    end
+
     private
 
     def self.load
@@ -38,6 +44,7 @@ module Locality
       @aregions = {}
       @states = {}
       @provinces = {}
+      @zip_codes = {}
     end
 
     def self.load!
@@ -49,6 +56,8 @@ module Locality
         @states[entry.state_code] << entry
         @provinces[entry.province_code] ||= []
         @provinces[entry.province_code] << entry
+        @zip_codes[entry.zip_code] ||= []
+        @zip_codes[entry.zip_code] << entry
       end
 
       @loaded = true
