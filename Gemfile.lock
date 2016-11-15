@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    locality (1.0.6)
+    locality (1.1.0)
       activesupport
       geocoder (= 1.2.13)
       hashie
@@ -13,7 +13,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.2.5)
+    activesupport (4.2.7.1)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -43,7 +43,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    hashie (3.4.3)
+    hashie (3.4.4)
     hitimes (1.2.2)
     i18n (0.7.0)
     json (1.8.3)
@@ -54,7 +54,7 @@ GEM
     lumberjack (1.0.9)
     maxminddb (0.1.8)
     method_source (0.8.2)
-    minitest (5.8.3)
+    minitest (5.9.0)
     nenv (0.1.1)
     notiffany (0.0.2)
       nenv (~> 0.1)
@@ -106,4 +106,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.10.6
+   1.12.5
