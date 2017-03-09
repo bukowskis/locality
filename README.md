@@ -65,8 +65,6 @@ lookup.aregion_codes
 ```bash
 # Get the libmaxminddb, e.g. via homebrew on Mac OS
 brew install libmaxminddb
-# Tell bundler where to find it
-bundle config build.hive_geoip2 --with-opt-dir=$(brew --prefix)
 # Download and extract the MaxMind GeoIp2 database
 curl http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz -o ./db && gunzip ./db/GeoLite2-City.mmdb.gz
 ```
